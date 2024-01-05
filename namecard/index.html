@@ -1,0 +1,561 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h1 class="title">Click the Card</h1>
+<a href="../index.html#contact"  id="back">Back</a>
+<div class="card-container">
+  <div class="card">
+    <div class="card-faces back">
+      <div class="logo-back">
+        <i class="jedi-icon-back fa fa-user-circle"></i>
+      </div>
+      <!-- <h4 class="back-title">Kevin Lim</h4>
+      <h4 class="back-sub-title">Software Engineer</h4> -->
+      <h3 class="back-name">Kevin <span class="wizard">Lim</span></h3>
+      <h6 class="back-sub-name">Software Engineer</h6>
+      
+      <ul class="back-list">
+        <!-- <li class="back-list-item"><i class="list-icon fas fa-map-marker-alt"></i> Unit 42, 6 Example Ave, 49418 U.K</li>
+        <li class="back-list-item"><i class="list-icon fas fa-mobile-alt"></i> +44 (0)7912 345678</li> -->
+        <li class="back-list-item"><i class="list-icon fa fa-globe"></i>  www.kevindevs.com</li>
+        <li class="back-list-item"><i class="list-icon fa fa-envelope-o"></i>kevinlim2959@gmail.com</li>
+        <!-- <li class="back-list-item"><i class="list-icon fa fa-instagram"></i> </li> -->
+      </ul>
+      <div class="blue-bar"></div>
+    </div>
+    <div class="card-faces front">
+      <!-- <div class="logo">
+        <i class="jedi-icon fas fa-jedi"></i>
+      </div> -->
+      <h4 class="front-title">Kevin Lim</h4>
+      <h4 class="front-sub-title">Software Engineer</h4>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+
+
+
+  * {
+    margin:0;
+    padding:0;
+    
+  }
+  body {
+    padding-top:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .title {
+    position:absolute;
+    bottom:400px;
+    text-align:center;
+    width:100%;
+    font-weight:100;
+    font-size:45px;
+  }
+
+  #back {
+    position:absolute;
+    bottom:330px;
+    text-align:center;
+    width:100%;
+    font-weight:100;
+    font-size:45px;
+  }
+  
+  .card-container {
+    width:750px;
+    height:500px;
+    border-radius:15px;
+    perspective: 600px;
+  }
+  .card {
+    position:relative;
+    width: 100%;
+    height:100%;
+    transition:1s ease-in-out;
+    transform-style: preserve-3d;
+    border-radius:5px;
+    box-shadow: 0px 0px 50px #000;
+    
+  }
+  .card-faces {
+    position:absolute;
+    height:100%;
+    width:100%;
+    border-radius:1px;
+    backface-visibility: hidden;
+      -webkit-backface-visibility: hidden; /* Safari */
+  }
+  
+  /*  FRONT STYLES */
+  /* alternative background "http://www.desktopimages.org/pictures/2014/0303/1/small-black-hexagon-pattern-wallpaper-60021.jpg" */
+  .front {
+    background-color:#022430;
+    /* background-image: url("https://i.pinimg.com/originals/db/59/4b/db594b739eb9f298a7c9dfeb64eb4e16.jpg"); */
+    background-size:cover;
+    background-position:250px 150px;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 200px 350px #033f47;
+  }
+  .logo {
+    width:10%;
+    height:16.5%;
+    border-radius:50%;
+    border-top:3px solid #3A3A3C;
+    border-left:3px solid #3A3A3C;
+    border-right:3px solid #e0f780;
+    border-bottom:3px solid #3A3A3C;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    top:40%;
+    left:9%;
+    transform: scale(1.5);
+  }
+  
+  .jedi-icon {
+    color:#e0f780;
+    font-size:150%;
+  }
+  .front-title {
+    position:absolute;
+    top:29%;
+    left: 25%;
+    text-align:center;
+    color:white;
+    font-size:188%;
+    letter-spacing:2px;
+    font-family: 'Open Sans', sans-serif;
+    /* border-left:2px solid #3A3A3C; */
+    padding-left:1.75%;
+    line-height:340%;
+    align-self:flex-end;
+    text-transform:uppercase;
+    font-weight:800;
+    font-size: 50px;
+  }
+  
+  .front-sub-title {
+    color:#e0f780;
+    align-self:flex-start;
+    position:absolute;
+    bottom:41%;
+    left: 27.0%;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
+    text-transform:uppercase;
+    font-weight:600;
+    font-size: 30px;
+  }
+  
+  
+  /*  BACK STYLES */
+  .back {
+    background-color:#022430;
+    /* background-image: url("https://i.pinimg.com/originals/db/59/4b/db594b739eb9f298a7c9dfeb64eb4e16.jpg"); */
+    background-size:cover;
+    background-position:-250px 150px;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 200px 350px #033f47;
+    transform: rotateY(180deg);
+  }
+  .logo-back {
+    margin-right:10px;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border-top:3px solid #3A3A3C;
+    border-left:3px solid #3A3A3C;
+    border-right:3px solid #e0f780;
+    border-bottom:3px solid #3A3A3C;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    top:30px;
+    left:30px;
+    transform: scale(.75);
+  }
+  .jedi-icon-back {
+    color:#e0f780;
+    font-size:60px;
+  }
+  .back-title {
+    position:absolute;
+    top:8px;
+    left: 40px;
+    text-align:center;
+    color:#3A3A3C;
+    font-size:30px;
+    letter-spacing:2px;
+    font-family: 'Open Sans', sans-serif;
+    border-left:2px solid #3A3A3C;
+    padding-left:10px;
+    line-height:80px;
+    align-self:flex-end;
+    text-transform:uppercase;
+    backface-visibility: hidden;
+    transform: scale(.75);
+    font-weight:700;
+  }
+  .back-sub-title {
+    color:#e0f780;
+    align-self:flex-start;
+    position:absolute;
+    top:54px;
+    left: 62px;
+    letter-spacing: 3px;
+    backface-visibility: hidden;
+    transform: scale(.75);
+    text-transform: uppercase;
+    font-weight:600;
+  }
+  
+  .back-name {
+    position:absolute;
+    right:5%;
+    top:30%;
+    color:#fff;
+    font-weight:600;
+    font-size:63px;
+    text-transform:uppercase;
+  }
+  .wizard {
+    color: white;
+  }
+  .back-sub-name {
+    position:absolute;
+    right:5%;
+    top:43%;
+    font-size:35.5px;
+    color:#e0f780;
+  /*   font-weight:300; */
+    /* font-size: 1em; */
+  }
+  
+  .back-list {
+    list-style:none;
+    position:absolute;
+    right:5%;
+    top: 55%;
+  }
+  .back-list-item {
+    color:#fff;
+    /* font-size:70%; */
+    font-size:23px;
+  }
+  .list-icon {
+    color:white;
+    padding:4px 5px 4px 0px;
+  }
+  
+  .blue-bar {
+    position:absolute;
+    top:13%;
+    right:0;
+    width:10px;
+    height:370px;
+    background: #e0f780;
+  }
+  
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </style>
+
+<style>
+
+
+
+@media (min-width: 992px) {
+
+
+* {
+  margin:0;
+  padding:0;
+  
+}
+body {
+  padding-top:100px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap: wrap;
+  font-family: 'Open Sans', sans-serif;
+}
+.title {
+  position:absolute;
+  bottom:130px;
+  text-align:center;
+  width:100%;
+  font-weight:100;
+  font-size:30px;
+}
+
+#back {
+  position:absolute;
+  bottom:80px;
+  text-align:center;
+  width:100%;
+  font-weight:100;
+  font-size:30px;
+}
+
+.card-container {
+  width:500px;
+  height:300px;
+  border-radius:15px;
+  perspective: 600px;
+}
+.card {
+  position:relative;
+  width: 100%;
+  height:100%;
+  transition:1s ease-in-out;
+  transform-style: preserve-3d;
+  border-radius:5px;
+  box-shadow: 0px 0px 50px #000;
+  
+}
+.card-faces {
+  position:absolute;
+  height:100%;
+  width:100%;
+  border-radius:1px;
+  backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+}
+
+/*  FRONT STYLES */
+/* alternative background "http://www.desktopimages.org/pictures/2014/0303/1/small-black-hexagon-pattern-wallpaper-60021.jpg" */
+.front {
+  background-color:#022430;
+  /* background-image: url("https://i.pinimg.com/originals/db/59/4b/db594b739eb9f298a7c9dfeb64eb4e16.jpg"); */
+  background-size:cover;
+  background-position:250px 150px;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px 200px 350px #033f47;
+}
+.logo {
+  width:10%;
+  height:16.5%;
+  border-radius:50%;
+  border-top:3px solid #3A3A3C;
+  border-left:3px solid #3A3A3C;
+  border-right:3px solid #e0f780;
+  border-bottom:3px solid #3A3A3C;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  top:40%;
+  left:9%;
+  transform: scale(1.5);
+}
+
+.jedi-icon {
+  color:#e0f780;
+  font-size:150%;
+}
+.front-title {
+  position:absolute;
+  top:30%;
+  left: 25%;
+  text-align:center;
+  color:white;
+  font-size:188%;
+  letter-spacing:2px;
+  font-family: 'Open Sans', sans-serif;
+  /* border-left:2px solid #3A3A3C; */
+  padding-left:1.75%;
+  line-height:340%;
+  align-self:flex-end;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.front-sub-title {
+  color:#e0f780;
+  align-self:flex-start;
+  position:absolute;
+  bottom:42%;
+  left: 27.0%;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 3px;
+  text-transform:uppercase;
+  font-weight:600;
+  font-size: 15px;
+}
+
+
+/*  BACK STYLES */
+.back {
+  background-color:#022430;
+  /* background-image: url("https://i.pinimg.com/originals/db/59/4b/db594b739eb9f298a7c9dfeb64eb4e16.jpg"); */
+  background-size:cover;
+  background-position:-250px 150px;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px 200px 350px #033f47;
+  transform: rotateY(180deg);
+}
+.logo-back {
+  margin-right:10px;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border-top:3px solid #3A3A3C;
+  border-left:3px solid #3A3A3C;
+  border-right:3px solid #e0f780;
+  border-bottom:3px solid #3A3A3C;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  top:20px;
+  left:20px;
+  transform: scale(.75);
+}
+.jedi-icon-back {
+  color:#e0f780;
+  font-size:35px;
+}
+.back-title {
+  position:absolute;
+  top:8px;
+  left: 40px;
+  text-align:center;
+  color:#3A3A3C;
+  font-size:30px;
+  letter-spacing:2px;
+  font-family: 'Open Sans', sans-serif;
+  border-left:2px solid #3A3A3C;
+  padding-left:10px;
+  line-height:80px;
+  align-self:flex-end;
+  text-transform:uppercase;
+  backface-visibility: hidden;
+  transform: scale(.75);
+  font-weight:700;
+}
+.back-sub-title {
+  color:#e0f780;
+  align-self:flex-start;
+  position:absolute;
+  top:54px;
+  left: 62px;
+  letter-spacing: 3px;
+  backface-visibility: hidden;
+  transform: scale(.75);
+  text-transform: uppercase;
+  font-weight:600;
+}
+
+.back-name {
+  position:absolute;
+  right:5%;
+  top:28%;
+  color:#fff;
+  font-weight:600;
+  font-size:40px;
+  text-transform:uppercase;
+}
+.wizard {
+  color: white;
+}
+.back-sub-name {
+  position:absolute;
+  right:5%;
+  top:42%;
+  color:#e0f780;
+/*   font-weight:300; */
+  /* font-size: 1em; */
+  font-size:22.5px;
+}
+
+.back-list {
+  list-style:none;
+  position:absolute;
+  right:5%;
+  top: 55%;
+}
+.back-list-item {
+  color:#fff;
+  font-size:90%;
+}
+.list-icon {
+  color:white;
+  padding:4px 5px 4px 0px;
+}
+
+.blue-bar {
+  position:absolute;
+  top:13%;
+  right:0;
+  width:10px;
+  height:220px;
+  background: #e0f780;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+}
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<script>
+
+const card = document.querySelector(".card");
+const logo = document.querySelector(".logo");
+
+// window.load = flipAuto();
+  
+//   function flipAuto(){
+//   card.classList.add("is-flipped");
+// }
+
+document.querySelector(".card-container").onclick = function() {
+  
+  if (card.classList.contains("is-flipped")) {
+    card.classList.remove("is-flipped");
+  } else {
+    card.classList.add("is-flipped");
+
+    // setTimeout(
+    // function() {
+    //   location.href = "../index.html";
+    // }, 2000);
+  }
+  
+}
+
+
+</script>

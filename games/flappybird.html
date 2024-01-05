@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.ico"/>
+    <title>Flappy Bird Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="background"></div>
+    <img src="images/Bird.png" alt="bird-img" class="bird" id="bird-1">
+    <div class="message">
+        Enter To Start Game <p><span style="color: red;">&uarr;</span> ArrowUp to Control</p>
+        <br/>
+        <a href="../index.html#game"  style="width:50%; background-color: #cfd1d3;color: #565963;padding: 15px 25px;text-decoration: none;">Back</a>
+    </div>
+
+
+    <div class="score">
+        <span class="score_title"></span>
+        <span class="score_val"></span>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+	const userAgent = navigator.userAgent;
+
+	if (userAgent.match(/Android/i)
+		  || userAgent.match(/webOS/i)
+		  || userAgent.match(/iPhone/i)
+		  || userAgent.match(/iPad/i)
+		  || userAgent.match(/iPod/i)
+		  || userAgent.match(/BlackBerry/i)
+		  || userAgent.match(/Windows Phone/i)) {
+		alert("Sorry, you are using a mobile device. Please try it on desktop device.");
+		location.href = "../index.html#game";
+	}
+	
+</script>

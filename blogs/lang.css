@@ -1,0 +1,16 @@
+
+.langs a{
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 650;
+    transition: .3s linear;
+    border-radius: 10%;
+}
+.langs a:hover{
+    background: #034a53;
+}
+.langs a.active{
+    background: #034a53;
+}
+
